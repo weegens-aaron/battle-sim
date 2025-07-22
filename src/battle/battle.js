@@ -4,23 +4,30 @@ export const battle = () => {
   console.log("Battle starting...");
 
   // Create two players
-  const player1 = new Player("Player 1", 100, 10);
-  const enemy = new Player("Enemy", 100, 8);
-
+  const player1 = new Player("Hero", 100, 10, 5);
+  const enemy = new Player("Assface", 100, 8, 5);
+  let round = 1;
   // while a character is alive, continue the battle
   while (player1.health > 0 && enemy.health > 0) {
-    console.log("Player 1:", player1);
-    console.log("Enemy:", enemy);
+    console.log(`\nRound ${round}`);
+    console.log(`${player1.name}: ${JSON.stringify(player1, null, 2)}`);
+    console.log(`${enemy.name}: ${JSON.stringify(enemy, null, 2)}`);
 
-    console.log("\nPlayer 1 attacks Enemy:");
+    console.log(`\n${player1.name} attacks ${enemy.name}:`);
     player1.attackTarget(enemy);
 
-    console.log("\nEnemy attacks Player 1:");
+    console.log(`\n${enemy.name} attacks ${player1.name}:`);
     enemy.attackTarget(player1);
 
-    console.log("\nBattle status after attacks:");
-    console.log("Player 1 health:", player1.health);
-    console.log("Enemy health:", enemy.health);
+    console.log(
+      `\nBattle status after attacks: ${player1.name}: ${JSON.stringify(
+        player1,
+        null,
+        2
+      )}`
+    );
+    console.log(`${enemy.name}: ${JSON.stringify(enemy, null, 2)}`);
+    round++;
   }
 };
 
