@@ -91,4 +91,4 @@ After implementing basic healing, try these enhancements:
 
 1. Add a limited number of healing potions (e.g., 3 per battle)
 2. Add a "critical hit" system where attacks have a 10% chance to do double damage
-3. Create a third character class like "Mage" with special abilities
+3. Create a second Player class like "Mage" with special abilities
