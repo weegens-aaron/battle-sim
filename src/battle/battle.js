@@ -3,11 +3,9 @@ import { Player } from "./player.js";
 export const battle = () => {
   console.log("Battle starting...");
 
-  // Create two players
   const player1 = new Player("Hero", 100, 10, 5);
   const enemy = new Player("Assface", 100, 8, 5);
   let round = 1;
-  // while a character is alive, continue the battle
   while (player1.health > 0 && enemy.health > 0) {
     console.log(`\nRound ${round}`);
     console.log(`${player1.name}: ${JSON.stringify(player1, null, 2)}`);

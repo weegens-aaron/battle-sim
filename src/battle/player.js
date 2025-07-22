@@ -22,14 +22,12 @@ export class Player {
   }
 
   attackTarget(target) {
-    // attack target
     const attackRoll = Math.random() * 20;
     const result = target.defend(this.attack, attackRoll);
     console.log(`${this.name} attacks ${target.name}: ${result}`);
   }
 
   defend(attack, attackRoll) {
-    // Apply damage to the player
     const defenseRoll = Math.random() * 20 + this.defense;
     if (attackRoll > defenseRoll) {
       this.takeDamage(attack);
